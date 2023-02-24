@@ -1,0 +1,67 @@
+{
+  "name": "rp-front",
+  "version": "0.1.0",
+  "description": "小牛旅游",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve --port 3000",
+    "build": "vue-cli-service build",
+    "stage": "vue-cli-service build --mode staging"
+  },
+  "transformModules": {
+    "cube-ui": {
+      "transform": "cube-ui/lib/${member}",
+      "kebabCase": true,
+      "style": {
+        "ignore": [
+          "create-api",
+          "better-scroll",
+          "locale"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "axios": "^0.21.0",
+    "core-js": "^3.6.5",
+    "cube-ui": "^1.12.46",
+    "element-china-area-data": "^5.0.2",
+    "element-ui": "^2.14.1",
+    "font-awesome": "^4.7.0",
+    "highlight.js": "^10.4.1",
+    "qrcodejs2": "^0.0.2",
+    "quill-image-drop-module": "^1.0.3",
+    "quill-image-resize-module": "^3.0.0",
+    "vue": "^2.6.11",
+    "vue-fontawesome": "0.0.2",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.2.0",
+    "vue-video-player": "^5.0.2",
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "html-webpack-plugin": "^4.5.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "script-ext-html-webpack-plugin": "^2.1.5",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "svg-sprite-loader": "^5.1.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-transform-modules-plugin": "^0.4.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
