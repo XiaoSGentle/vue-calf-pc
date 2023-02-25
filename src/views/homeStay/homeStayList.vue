@@ -1,7 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
-    <div class="" style="width: 10%; height: 300px"></div>
+    <header-nav></header-nav>
+    <!-- 上半部分广告 -->
+    <div class="" style="height: 400px"></div>
+    <!--下部分卡片区域 -->
     <div class="u-flex u-row-center u-m-t-40">
       <div style="width: 80%">
         <div class="u-m-30">
@@ -55,9 +58,6 @@
 </template>
 
 <script >
-/* eslint-disable*/
-// 这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
-// 例如：import 《组件名称》 from '《组件路径》';
 import { getHouse } from "../../api/hourses/hourse.js";
 export default {
   // import引入的组件需要注入到对象中才能使用

@@ -3,7 +3,7 @@
     <header-nav></header-nav>
     <banner />
     <!--攻略头条-->
-    <div class=" content">
+    <div class="content">
       <div class="head">
         <div class="text">攻略头条</div>
         <div class="more">
@@ -15,12 +15,20 @@
     </div>
     <div class="content">
       <div class="article">
-        <div class="strategy" v-for="(item, key) in strategyList" :key="key" @click="goArticalDetial(item.id)">
+        <div
+          class="strategy"
+          v-for="(item, key) in strategyList"
+          :key="key"
+          @click="goArticalDetial(item.id)"
+        >
           <el-image class="cover" :src="item.cover" fit="fit"></el-image>
           <div class="title">{{ item.title }}</div>
           <div class="subTitle">
-            <div style="display:flex;align-items:center">
-              <el-avatar :size="20" :src="item.author ? getBaseUrl() + item.author.avatar : ''"></el-avatar>
+            <div style="display: flex; align-items: center">
+              <el-avatar
+                :size="20"
+                :src="item.author ? item.author.avatar : ''"
+              ></el-avatar>
               {{ item.author ? item.author.nickName : "匿名用户" }}
             </div>
             <div>
@@ -31,7 +39,14 @@
         </div>
       </div>
     </div>
-    <div style="width: 1000xp;display: flex;justify-content: center;height: 600px;">
+    <div
+      style="
+        width: 1000xp;
+        display: flex;
+        justify-content: center;
+        height: 600px;
+      "
+    >
       <div>
         <div class="content-left">
           <div class="head">
@@ -45,12 +60,20 @@
         </div>
         <div class="content-left">
           <div class="article-left">
-            <div class="strategy" v-for="(item, key) in youjiList" :key="key" @click="goArticalDetial(item.id)">
+            <div
+              class="strategy"
+              v-for="(item, key) in youjiList"
+              :key="key"
+              @click="goArticalDetial(item.id)"
+            >
               <el-image class="cover" :src="item.cover" fit="fit"></el-image>
               <div class="title">{{ item.title }}</div>
               <div class="subTitle">
-                <div style="display:flex;align-items:center">
-                  <el-avatar :size="20" :src="item.author ? getBaseUrl() + item.author.avatar : ''"></el-avatar>
+                <div style="display: flex; align-items: center">
+                  <el-avatar
+                    :size="20"
+                    :src="item.author ? item.author.avatar : ''"
+                  ></el-avatar>
                   {{ item.author ? item.author.nickName : "匿名用户" }}
                 </div>
                 <div>
@@ -75,12 +98,20 @@
         </div>
         <div class="content-left">
           <div class="article-left">
-            <div class="strategy" v-for="(item, key) in noteList" :key="key" @click="goArticalDetial(item.id)">
+            <div
+              class="strategy"
+              v-for="(item, key) in noteList"
+              :key="key"
+              @click="goArticalDetial(item.id)"
+            >
               <el-image class="cover" :src="item.cover" fit="fit"></el-image>
               <div class="title">{{ item.title }}</div>
               <div class="subTitle">
-                <div style="display:flex;align-items:center">
-                  <el-avatar :size="20" :src="item.author ? getBaseUrl() + item.author.avatar : ''"></el-avatar>
+                <div style="display: flex; align-items: center">
+                  <el-avatar
+                    :size="20"
+                    :src="item.author ? item.author.avatar : ''"
+                  ></el-avatar>
                   {{ item.author ? item.author.nickName : "匿名用户" }}
                 </div>
                 <div>
@@ -91,7 +122,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <y-footer></y-footer>
@@ -101,9 +131,7 @@
 <script>
 // @ is an alias to /src
 import Banner from "@/components/Banner.vue";
-import {
-  getArticleList
-} from "@/api/cms/article";
+import { getArticleList } from "@/api/cms/article";
 export default {
   name: "Home",
   components: {
@@ -114,7 +142,7 @@ export default {
       baseUrl: this.getBaseUrl(),
       strategyList: [],
       youjiList: [],
-      noteList: []
+      noteList: [],
     };
   },
   created() {
@@ -126,22 +154,22 @@ export default {
         pageNum: 1,
         pageSize: 4,
         category: "1",
-        orderByColumn: 'read_num',
-        isAsc: 'desc',
+        orderByColumn: "read_num",
+        isAsc: "desc",
       };
       let query1 = {
         pageNum: 1,
         pageSize: 4,
         category: "2",
-        orderByColumn: 'read_num',
-        isAsc: 'desc',
+        orderByColumn: "read_num",
+        isAsc: "desc",
       };
       let query2 = {
         pageNum: 1,
         pageSize: 4,
         category: "4",
-        orderByColumn: 'read_num',
-        isAsc: 'desc',
+        orderByColumn: "read_num",
+        isAsc: "desc",
       };
       getArticleList(query).then((res) => {
         this.strategyList = res.rows;
@@ -163,10 +191,8 @@ export default {
       });
     },
     goArticalDetial(id) {
-
-      this.$router.push({ path: "/article/strategy/detial/" + id })
-    }
-
+      this.$router.push({ path: "/article/strategy/detial/" + id });
+    },
   },
 };
 </script>
@@ -214,7 +240,6 @@ export default {
   display: flex;
   justify-content: center;
 
-
   .head {
     padding-top: 30px;
     width: 500px;
@@ -234,7 +259,6 @@ export default {
     }
   }
 }
-
 
 .article-left {
   display: flex;
