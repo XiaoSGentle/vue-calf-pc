@@ -8,6 +8,21 @@
     position: absolute;
 }
 
+.u-fl {
+
+    float: left;
+}
+
+.u-radius {
+
+    border-radius: 5px;
+}
+
+.u-fr {
+
+    float: right;
+}
+
 .u-line-1 {
     overflow: hidden;
     white-space: nowrap;
@@ -95,6 +110,18 @@
 .u-flex-col {
     display: flex;
     flex-direction: column;
+}
+
+
+@for $i from 0 to 2000 {
+    .u-h-#{$i} {
+        height: $i+px;
+    }
+
+    .u-w-#{$i} {
+        width: $i+px;
+    }
+
 }
 
 // 定义flex等分
