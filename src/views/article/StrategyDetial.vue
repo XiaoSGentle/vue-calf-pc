@@ -5,7 +5,7 @@
     <div class="main u-flex u-row-center u-col-top u-m-t-30">
       <div class="left">
         <div class="list u-m-b-20">
-          <div class="travel-title u-font-blue">文章攻略详情</div>
+          <div class="travel-title u-font-blue"></div>
           <div class="u-m-20">
             <div style="font-size: 25px">{{ articleDetial.title }}</div>
 
@@ -29,7 +29,7 @@
       </div>
       <div class="right u-m-l-20">
         <div class="list">
-          <div class="travel-title u-font-blue">作者信息</div>
+          <div class="travel-title u-font-blue">其他文章</div>
         </div>
       </div>
     </div>
