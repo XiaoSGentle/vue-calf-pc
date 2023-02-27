@@ -51,5 +51,16 @@ export function cancelCollectHouse(params) {
     })
 }
 
+//获取民宿收藏的列表
+export function getLoveHomeList() {
+    return request({
+        url: '/api/house/collect/list',
+        method: 'get'
+    })
+
+
+}
+
+
 
 
