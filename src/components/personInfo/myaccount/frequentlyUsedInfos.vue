@@ -4,8 +4,8 @@
       changeType = 1;
     dialogVisible = true;
     addPersionParam.cardNo = '';
-    addLivingPersion.name = '';
-                  " icon="el-icon-plus">添加入住人</el-button>
+    addPersionParam.name = '';
+          " icon="el-icon-plus">添加入住人</el-button>
 
     <div class="u-m-t-40">
       <div class="u-m-t-40" style="height: 50px" v-for="(item, index) in livingPersionList" :key="index">

@@ -15,3 +15,14 @@ export function getArticleD(query) {
     method: 'get'
   })
 }
+
+
+export function addArtical(query) {
+
+  return request({
+
+    url: '/api/cms/article',
+    method: 'post',
+    data: query
+  })
+}

@@ -10,9 +10,7 @@
           <!-- 酒店标题 -->
           <span class="u-font-25 u-font-bold">{{ homeInfo.title }}</span>
           <!-- 酒店评分 -->
-          <span class="u-m-t-10 u-m-l-10"
-            ><el-rate v-model="homeInfo.score / 1" disabled> </el-rate
-          ></span>
+          <span class="u-m-t-10 u-m-l-10"><el-rate v-model="homeInfo.score / 1" disabled> </el-rate></span>
           <!-- <span> <i class="el-icon-share"></i></span> -->
         </div>
         <div class="u-flex">
@@ -22,11 +20,9 @@
               <!-- 地址 -->
               <div class="u-flex">
                 <span><i class="el-icon-location"></i></span>
-                <span
-                  >{{ homeInfo.province }}-{{ homeInfo.city }}-{{
-                    homeInfo.area
-                  }}--{{ homeInfo.location }}</span
-                >
+                <span>{{ homeInfo.province }}-{{ homeInfo.city }}-{{
+                  homeInfo.area
+                }}--{{ homeInfo.location }}</span>
               </div>
               <!-- 装修 -->
               <div class="u-m-t-10 u-abso u-fl u-w-600">
@@ -40,31 +36,17 @@
               <div class="u-flex">
                 <!-- 左侧走马灯 -->
                 <div>
-                  <el-carousel
-                    class="u-radius"
-                    style="height: 300px; width: 480px"
-                  >
-                    <el-carousel-item
-                      v-for="(item, index) in homeInfo.imageList"
-                      :key="index"
-                    >
+                  <el-carousel class="u-radius" style="height: 300px; width: 480px">
+                    <el-carousel-item v-for="(item, index) in homeInfo.imageList" :key="index">
                       <div>
-                        <img
-                          style="height: 300px; width: 480px"
-                          :src="baseUrl + item.url"
-                          alt=""
-                        />
+                        <img style="height: 300px; width: 480px" :src="baseUrl + item.url" alt="" />
                       </div>
                     </el-carousel-item>
                   </el-carousel>
                 </div>
                 <!-- 右侧缩略 -->
                 <div class="u-m-l-20 u-h-240 u-w-120">
-                  <div
-                    class="u-radius"
-                    v-for="(item, index) in homeInfo.imageList"
-                    :key="index"
-                  >
+                  <div class="u-radius" v-for="(item, index) in homeInfo.imageList" :key="index">
                     <img class="u-h-120 u-w-120" :src="baseUrl + item.url" />
                   </div>
                 </div>
@@ -75,51 +57,30 @@
           <div class="u-w-380 u-h-370 u-p-20">
             <!-- 日期选择 -->
             <div>
-              <el-date-picker
-                style="width: 100%"
-                type="daterange"
-                range-separator="至"
-                start-placeholder="入住日期"
-                end-placeholder="离店日期"
-                v-model="getData"
-                value-format="yyyy-MM-dd"
-              >
+              <el-date-picker style="width: 100%" type="daterange" range-separator="至" start-placeholder="入住日期"
+                end-placeholder="离店日期" v-model="getData" value-format="yyyy-MM-dd">
               </el-date-picker>
             </div>
             <!-- 收藏人数，评论人数-->
             <div class="u-flex u-row-around u-m-t-50">
               <div>
-                <span
-                  ><svg-icon class="icon" iconClass="shoucang_1" />{{
-                    homeInfo.collectNum
-                  }}人收藏</span
-                >
+                <span><svg-icon class="icon" iconClass="shoucang_1" />{{
+                  homeInfo.collectNum
+                }}人收藏</span>
               </div>
               <div>
-                <span
-                  ><svg-icon class="icon" iconClass="pinglun" />{{
-                    homeInfo.commentNum
-                  }}条评论</span
-                >
+                <span><svg-icon class="icon" iconClass="pinglun" />{{
+                  homeInfo.commentNum
+                }}条评论</span>
               </div>
             </div>
             <div class="u-h-180"></div>
             <!-- 提交按钮 -->
             <div class="u-flex">
-              <el-button
-                style="width: 100%"
-                type="success"
-                round
-                @click="goAddOrder()"
-              >
-                立即订房</el-button
-              >
+              <el-button style="width: 100%" type="success" round @click="goAddOrder()">
+                立即订房</el-button>
               <div class="u-m-l-10" @click="collectBtn()">
-                <span
-                  ><svg-icon
-                    class="icon"
-                    :iconClass="isLiked ? 'hongxin' : 'shoucang'"
-                /></span>
+                <span><svg-icon class="icon" :iconClass="isLiked ? 'hongxin' : 'shoucang'" /></span>
               </div>
             </div>
           </div>
@@ -135,13 +96,7 @@
           <div class="u-m-t-20">
             <span class="u-font-20 u-font-bold">基本设施</span>
             <div class="u-flex u-m-t-20">
-              <el-tag
-                class="u-m-l-10"
-                v-for="(item, index) in homeTag"
-                :key="index"
-                type="success"
-                >{{ item }}</el-tag
-              >
+              <el-tag class="u-m-l-10" v-for="(item, index) in homeTag" :key="index" type="success">{{ item }}</el-tag>
             </div>
           </div>
           <!-- 房间信息 -->
@@ -173,18 +128,11 @@
           <span class="u-font-25 u-font-bold">租客问答</span>
         </div>
         <div class="u-m-t-20">
-          <div
-            v-for="(item, index) in homeQuestions"
-            :key="index"
-            class="u-m-30"
-          >
+          <div v-for="(item, index) in homeQuestions" :key="index" class="u-m-30">
             <!-- 问题区 -->
             <div class="u-flex u-row-between">
               <div class="u-flex">
-                <el-avatar
-                  :size="30"
-                  :src="baseUrl + item.user.avatar"
-                ></el-avatar>
+                <el-avatar :size="30" :src="baseUrl + item.user.avatar"></el-avatar>
                 <span class="u-font-22 u-font-bold u-m-l-10">{{
                   item.content
                 }}</span>
@@ -195,10 +143,7 @@
             </div>
             <!-- 答案区 -->
             <div class="u-m-t-10 u-flex">
-              <el-avatar
-                :size="30"
-                :src="baseUrl + item.latestAnswer.user.avatar"
-              ></el-avatar>
+              <el-avatar :size="30" :src="baseUrl + item.latestAnswer.user.avatar"></el-avatar>
               <span class="u-font-20 u-m-l-10">{{
                 item.latestAnswer.content
               }}</span>
@@ -265,7 +210,7 @@ export default {
     goAddOrder() {
       this.$router.push({
         name: "confirmOrder",
-        params: { homeId: this.homeId, data: this.getData },
+        query: { homeId: this.homeId, data: this.getData },
       });
     },
     collectBtn() {
@@ -297,14 +242,14 @@ export default {
   },
 
   // 生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
-  beforeCreate() {}, // 生命周期 - 创建之前
-  beforeMount() {}, // 生命周期 - 挂载之前
-  beforeUpdate() {}, // 生命周期 - 更新之前
-  updated() {}, // 生命周期 - 更新之后
-  beforeDestroy() {}, // 生命周期 - 销毁之前
-  destroyed() {}, // 生命周期 - 销毁完成
-  activated() {}, // 如果页面有keep-alive缓存功能，这个函数会触发
+  mounted() { },
+  beforeCreate() { }, // 生命周期 - 创建之前
+  beforeMount() { }, // 生命周期 - 挂载之前
+  beforeUpdate() { }, // 生命周期 - 更新之前
+  updated() { }, // 生命周期 - 更新之后
+  beforeDestroy() { }, // 生命周期 - 销毁之前
+  destroyed() { }, // 生命周期 - 销毁完成
+  activated() { }, // 如果页面有keep-alive缓存功能，这个函数会触发
 };
 </script>
 <style scoped>

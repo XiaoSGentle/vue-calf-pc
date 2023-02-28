@@ -2,78 +2,28 @@
   <div class="home-con">
     <header-nav></header-nav>
     <banner />
-    <!--攻略头条-->
-    <div class="content">
-      <div class="head">
-        <div class="text">攻略头条</div>
-        <div class="more">
-          <router-link :to="{ path: '/article/strategy/list/1' }">
-            查看更多<i class="el-icon-arrow-right"></i>
-          </router-link>
-        </div>
-      </div>
-    </div>
-    <div class="content">
-      <div class="article">
-        <div
-          class="strategy"
-          v-for="(item, key) in strategyList"
-          :key="key"
-          @click="goArticalDetial(item.id)"
-        >
-          <el-image class="cover" :src="item.cover" fit="fit"></el-image>
-          <div class="title">{{ item.title }}</div>
-          <div class="subTitle">
-            <div style="display: flex; align-items: center">
-              <el-avatar
-                :size="20"
-                :src="item.author ? item.author.avatar : ''"
-              ></el-avatar>
-              {{ item.author ? item.author.nickName : "匿名用户" }}
-            </div>
-            <div>
-              <i class="el-icon-star-on"></i>{{ item.goodNum }}
-              <i class="el-icon-s-comment"></i>{{ item.commentNum }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      style="
-        width: 1000xp;
-        display: flex;
-        justify-content: center;
-        height: 600px;
-      "
-    >
+    <div>
+      <!-- 首页列表 -->
       <div>
-        <div class="content-left">
+        <!--攻略头条-->
+        <div class="content">
           <div class="head">
-            <div class="text">精华游记</div>
+            <div class="text">攻略头条</div>
             <div class="more">
-              <router-link :to="{ path: '/article/strategy/list/2' }">
+              <router-link :to="{ path: '/article/strategy/list/1' }">
                 查看更多<i class="el-icon-arrow-right"></i>
               </router-link>
             </div>
           </div>
         </div>
-        <div class="content-left">
-          <div class="article-left">
-            <div
-              class="strategy"
-              v-for="(item, key) in youjiList"
-              :key="key"
-              @click="goArticalDetial(item.id)"
-            >
+        <div class="content">
+          <div class="article">
+            <div class="strategy" v-for="(item, key) in strategyList" :key="key" @click="goArticalDetial(item.id)">
               <el-image class="cover" :src="item.cover" fit="fit"></el-image>
               <div class="title">{{ item.title }}</div>
               <div class="subTitle">
                 <div style="display: flex; align-items: center">
-                  <el-avatar
-                    :size="20"
-                    :src="item.author ? item.author.avatar : ''"
-                  ></el-avatar>
+                  <el-avatar :size="20" :src="item.author ? item.author.avatar : ''"></el-avatar>
                   {{ item.author ? item.author.nickName : "匿名用户" }}
                 </div>
                 <div>
@@ -84,47 +34,87 @@
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="content-left">
-          <div class="head">
-            <div class="text">推荐笔记</div>
-            <div class="more">
-              <router-link :to="{ path: '/article/strategy/list/4' }">
-                查看更多<i class="el-icon-arrow-right"></i>
-              </router-link>
-            </div>
-          </div>
-        </div>
-        <div class="content-left">
-          <div class="article-left">
-            <div
-              class="strategy"
-              v-for="(item, key) in noteList"
-              :key="key"
-              @click="goArticalDetial(item.id)"
-            >
-              <el-image class="cover" :src="item.cover" fit="fit"></el-image>
-              <div class="title">{{ item.title }}</div>
-              <div class="subTitle">
-                <div style="display: flex; align-items: center">
-                  <el-avatar
-                    :size="20"
-                    :src="item.author ? item.author.avatar : ''"
-                  ></el-avatar>
-                  {{ item.author ? item.author.nickName : "匿名用户" }}
+
+        <div style="
+                                                                                            width: 1000xp;
+                                                                                            display: flex;
+                                                                                            justify-content: center;
+                                                                                            height: 600px;
+                                                                                          ">
+          <div>
+            <div class="content-left">
+              <div class="head">
+                <div class="text">精华游记</div>
+                <div class="more">
+                  <router-link :to="{ path: '/article/strategy/list/2' }">
+                    查看更多<i class="el-icon-arrow-right"></i>
+                  </router-link>
                 </div>
-                <div>
-                  <i class="el-icon-star-on"></i>{{ item.goodNum }}
-                  <i class="el-icon-s-comment"></i>{{ item.commentNum }}
+              </div>
+            </div>
+            <div class="content-left">
+              <div class="article-left">
+                <div class="strategy" v-for="(item, key) in youjiList" :key="key" @click="goArticalDetial(item.id)">
+                  <el-image class="cover" :src="item.cover" fit="fit"></el-image>
+                  <div class="title">{{ item.title }}</div>
+                  <div class="subTitle">
+                    <div style="display: flex; align-items: center">
+                      <el-avatar :size="20" :src="item.author ? item.author.avatar : ''"></el-avatar>
+                      {{ item.author ? item.author.nickName : "匿名用户" }}
+                    </div>
+                    <div>
+                      <i class="el-icon-star-on"></i>{{ item.goodNum }}
+                      <i class="el-icon-s-comment"></i>{{ item.commentNum }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div>
+            <div class="content-left">
+              <div class="head">
+                <div class="text">推荐笔记</div>
+                <div class="more">
+                  <router-link :to="{ path: '/article/strategy/list/4' }">
+                    查看更多<i class="el-icon-arrow-right"></i>
+                  </router-link>
+                </div>
+              </div>
+            </div>
+            <div class="content-left">
+              <div class="article-left">
+                <div class="strategy" v-for="(item, key) in noteList" :key="key" @click="goArticalDetial(item.id)">
+                  <el-image class="cover" :src="item.cover" fit="fit"></el-image>
+                  <div class="title">{{ item.title }}</div>
+                  <div class="subTitle">
+                    <div style="display: flex; align-items: center">
+                      <el-avatar :size="20" :src="item.author ? item.author.avatar : ''"></el-avatar>
+                      {{ item.author ? item.author.nickName : "匿名用户" }}
+                    </div>
+                    <div>
+                      <i class="el-icon-star-on"></i>{{ item.goodNum }}
+                      <i class="el-icon-s-comment"></i>{{ item.commentNum }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 浮动添加按钮 -->
+      <div>
+        <div class="u-abso u-h-70 u-w-70 tick">
+
+          <el-button class=" u-h-70 u-w-70 fr" type="primary" icon="el-icon-edit" circle @click="goAdd()"></el-button>
+
+
         </div>
       </div>
     </div>
     <y-footer></y-footer>
+
   </div>
 </template>
 
@@ -193,11 +183,21 @@ export default {
     goArticalDetial(id) {
       this.$router.push({ path: "/article/strategy/detial/" + id });
     },
+    goAdd() {
+      this.$router.push({ path: "/article/strategy/add" });
+    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.tick {
+
+  z-index: 999;
+  right: 100px;
+  bottom: 20px;
+}
+
 .home-con {
   background-color: #f5f5f5;
 

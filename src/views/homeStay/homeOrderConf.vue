@@ -350,11 +350,10 @@ export default {
         },
         // 订单提交
         postOrder() {
-
             this.orderParam.bookDay = this.days;
             this.orderParam.houseId = this.homeId;
             this.orderParam.message = this.message;
-            this.orderParam.payAmount = 0;
+            this.orderParam.payAmount = this.homeInfo.price * this.days;
             this.orderParam.personList = this.selectPersionList;
             this.orderParam.startDate = this.data[0];
             this.orderParam.endDate = this.data[1];
@@ -371,8 +370,8 @@ export default {
     },
     // 生命周期 - 创建完成（可以访问当前this实例）
     created() {
-        this.homeId = this.$route.params.homeId;
-        this.data = this.$route.params.data;
+        this.homeId = this.$route.query.homeId;
+        this.data = this.$route.query.data;
         this.getHomedetial();
     },
     // 生命周期 - 挂载完成（可以访问DOM元素）
